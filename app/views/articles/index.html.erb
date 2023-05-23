@@ -1,0 +1,12 @@
+<div class="container mt-2">
+<h1>WoW Wiki</h1>
+
+<h3 style="color:green"><%= link_to "Make a new article bro", new_article_path %></h3>
+
+<ul style="list-style:katakana">
+  <% @articles.each do |article| %>
+    <hr>
+    <li><%= link_to "❌", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%> | <%= link_to article.title, article_path(article) %> | | <%= article.content %></li>
+  <% end %>
+</ul>
+</div>
